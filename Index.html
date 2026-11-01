@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06172d">
+<title>MESSI: THE GOAT — KURO CHALLENGE</title>
+<style>
+:root{--sky:#83dcff;--ice:#eafaff;--navy:#06172d;--red:#a51e42}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#f5fbff;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at 50% -15%,#2875a5 0,#102e50 35%,#06172d 72%,#020711 100%);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;top:-15vh;width:25vw;height:55vh;pointer-events:none;filter:blur(35px);opacity:.18;background:#8de5ff;transform:rotate(28deg);animation:beam 5s ease-in-out infinite alternate}
+body:after{right:0;left:auto;animation-delay:1.5s}
+@keyframes beam{to{opacity:.38;transform:rotate(-25deg) translateY(25px)}}
+main{width:min(760px,100%);min-height:100vh;margin:auto;padding:22px 15px;display:grid;place-items:center;position:relative}
+.card{width:100%;position:relative;overflow:hidden;text-align:center;padding:clamp(22px,5vw,38px) clamp(17px,5vw,34px);border:1px solid #9de8ff66;border-radius:28px;background:linear-gradient(145deg,#0c2b49ed,#06172df5);box-shadow:0 0 45px #44bfff25,inset 0 0 30px #66d5ff0b;animation:appear .55s ease both}
+.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 32px,#9deaff08 33px 34px)}
+.card>*{position:relative}
+.hidden{display:none!important}
+@keyframes appear{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;color:var(--sky);font-weight:900}
+h1{font-size:clamp(2.4rem,10vw,5rem);line-height:.95;margin:15px 0;text-shadow:0 0 22px #6fd5ff44}
+h2{font-size:clamp(1.25rem,5vw,1.8rem);margin:12px 0}
+p{color:#d6eaf5;line-height:1.6}
+button,input{font:inherit}
+button{cursor:pointer}
+.primary{width:100%;border:0;border-radius:15px;padding:15px 18px;margin-top:17px;background:linear-gradient(110deg,#77d8ff,#f5fdff);color:#05203a;font-weight:950;letter-spacing:.06em;box-shadow:0 7px 25px #52caff33;transition:.18s}
+.primary:active,.option:active{transform:scale(.98)}
+.topline{display:flex;justify-content:space-between;gap:12px;font-size:.8rem;color:#c9efff;font-weight:850;letter-spacing:.1em}
+.track{height:8px;border-radius:20px;background:#1b3b57;overflow:hidden;margin:14px 0 17px}
+.track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#53caff,#fff);box-shadow:0 0 14px #79ddff;transition:width .4s}
+.score{font-weight:900;color:#ffe59b;margin:10px}
+.options{display:grid;gap:10px;margin-top:20px}
+.option{border:1px solid #8cddff66;background:linear-gradient(100deg,#123b5b,#0b2945);color:#f4fbff;text-align:left;padding:14px 16px;border-radius:14px;font-weight:750;transition:.2s}
+.option:disabled{opacity:.65}
+input{width:100%;border-radius:14px;padding:15px;border:1px solid #9de8ff;background:#f5fbff;color:#10263c;margin-top:16px;outline:none}
+.feedback{min-height:38px;margin:16px 0 0;font-weight:1000;font-size:1.35rem}
+.good{color:#a4eaff;text-shadow:0 0 20px #54caff;animation:pop .35s}
+.bad{color:#ff718f;text-shadow:0 0 20px #ff315e;animation:shake .35s}
+@keyframes pop{50%{transform:scale(1.16)}}
+@keyframes shake{25%,75%{transform:translateX(-7px)}50%{transform:translateX(7px)}}
+.pulse{animation:pulse .6s}
+@keyframes pulse{50%{box-shadow:0 0 55px #4ecbff99,inset 0 0 35px #4ecbff44}}
+.shake{animation:shake .35s}
+.personal{background:radial-gradient(circle at 50% 0,#75253f,#321326 62%,#160b16);border-color:#ff9ab866;box-shadow:0 0 45px #ff477733}
+.personal .eyebrow{color:#ffb7c9}
+.personal .primary{background:linear-gradient(110deg,#ff9db8,#fff0f4);color:#47162a}
+.cherry{font-size:3.4rem;filter:drop-shadow(0 0 12px #ff8eae)}
+.final{background:radial-gradient(ellipse at 50% 0,#275f8d,#0b2745 55%,#06172d);border-color:#b3ecff}
+.trophy{font-size:4.3rem;filter:drop-shadow(0 0 18px #9be8ff);animation:float 2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-9px)}}
+.scoreboard{position:fixed;inset:0;z-index:5;background:radial-gradient(ellipse at 50% 45%,#173e5b,#02050c 72%);display:grid;place-items:center;text-align:center;padding:20px;animation:darken .5s}
+@keyframes darken{from{opacity:0}to{opacity:1}}
+.board{border:3px solid #8cddff88;border-radius:18px;padding:25px 20px;width:min(560px,94vw);box-shadow:0 0 45px #54caff44,inset 0 0 35px #54caff22}
+.boardname{font-size:clamp(3rem,16vw,7rem);font-weight:1000;letter-spacing:.08em;color:#eafaff;text-shadow:0 0 28px #64d5ff;animation:pop .7s}
+.board .eyebrow{margin-bottom:12px}
+.note{font-size:.78rem;color:#9bb8cc;margin-top:18px}
+</style>
+</head>
+<body><main>
+<section id="welcome" class="card">
+ <div class="eyebrow">THE ULTIMATE FOOTBALL CHALLENGE</div>
+ <div style="font-size:3.8rem;margin:16px 0">🇦🇷 ⚽ 🐐</div>
+ <h1>MESSI:<br><span style="color:#8cddff">THE GOAT</span></h1>
+ <h2>WELCOME, KURO!</h2>
+ <p>ARE YOU READY FOR THE 13-QUESTION CHALLENGE?</p>
+ <p>Three Messi levels. One personal question. One final surprise.</p>
+ <button class="primary" onclick="startGame()">KICK OFF THE CHALLENGE →</button>
+ <div class="note">A special challenge, made just for you.</div>
+</section>
+
+<section id="game" class="card hidden">
+ <div class="topline"><span id="level">PRO LEVEL</span><span id="counter">01 / 13</span></div>
+ <div class="track"><span id="progress"></span></div>
+ <div class="score" id="score">⭐ 0 STARS</div>
+ <h2 id="question"></h2>
+ <div id="options" class="options"></div>
+ <input id="typed" class="hidden" autocomplete="off" placeholder="TYPE YOUR ANSWER…">
+ <div id="feedback" class="feedback"></div>
+ <button id="submit" class="primary hidden" onclick="submitTyped()">LOCK IN ANSWER</button>
+ <button id="next" class="primary hidden" onclick="nextQuestion()">NEXT →</button>
+</section>
+
+<section id="personal" class="card personal hidden">
+ <div class="eyebrow">THE CHERRY RED FINAL ROUND</div>
+ <div class="cherry">🍒 ✨ 🍒</div>
+ <h1 style="font-size:clamp(2.3rem,9vw,4rem)">ONE LAST<br>QUESTION</h1>
+ <p style="font-size:1.2rem;font-weight:750">What do you think makes me the happiest?</p>
+ <input id="personalAnswer" placeholder="TYPE YOUR GUESS…" autocomplete="off">
+ <button class="primary" onclick="finishPersonal()">SEND MY ANSWER</button>
+ <div class="note">No right or wrong answer here. Just your guess.</div>
+</section>
+
+<section id="final" class="card final hidden">
+ <div class="trophy">🏆</div><div class="eyebrow">THE FINAL WHISTLE</div>
+ <h1>YOU MADE IT,<br><span style="color:#a9e8ff">KURO!</span></h1>
+ <div style="font-size:2rem;margin:14px">⭐ ⚽ ⭐</div>
+ <h2>13 QUESTIONS. ONE LEGEND.</h2>
+ <p>You made it through the challenge. But here's your real reward...</p>
+ <h2 style="color:#a9e8ff">THANK YOU FOR PLAYING! 💙</h2>
+ <p>Some legends are remembered for their goals. Some moments are remembered because of the people we share them with.</p>
+ <div id="answerReveal" style="margin:20px auto;padding:17px;border:1px solid #9de8ff88;border-radius:16px;background:#0b2945;max-width:520px">
+   <div class="eyebrow">YOUR ANSWER TO RAINA'S QUESTION</div>
+   <p id="answerText" style="font-size:1.15rem;font-weight:850;color:#fff;overflow-wrap:anywhere"></p>
+   <p style="font-size:.92rem;color:#bcecff;margin-bottom:0">📸 Take a screenshot of this answer and send it to Raina so she can see what you wrote!</p>
+ </div>
+ <div style="font-size:2.8rem;margin:14px">🇦🇷 🐐 🏆</div>
+ <div class="eyebrow" style="letter-spacing:.12em">MADE ESPECIALLY FOR KURO</div>
+ <h2 style="color:#b9eaff">FROM RAINA</h2>
+</section>
+</main>
+<div id="scoreboard" class="scoreboard hidden"><div class="board"><div class="eyebrow">FULL TIME • FINAL SCORE</div><div class="boardname">KURO</div><div style="font-size:3.5rem;margin:15px">🏆</div><h2>WHAT A LEGEND!</h2><p>THE FINAL WHISTLE…</p></div></div>
+<script>
+const questions=[
+["PRO LEVEL","Which country does Messi represent?",["Brazil","Argentina","Spain","Portugal"],"Argentina"],
+["PRO LEVEL","What is Messi's iconic jersey number?",null,"10"],
+["PRO LEVEL","Which club did Messi spend most of his career playing for?",["PSG","Inter Miami","Barcelona","Manchester City"],"Barcelona"],
+["PRO LEVEL","Which country did Argentina defeat in the 2022 World Cup final?",null,"France"],
+["LEGEND LEVEL","In which year did Messi win his first Ballon d'Or?",["2007","2008","2009","2010"],"2009"],
+["LEGEND LEVEL","How many goals did Messi score in the calendar year 2012?",null,"91"],
+["LEGEND LEVEL","Against which team did Messi score five goals in one Champions League match in 2012?",["Arsenal","Bayer Leverkusen","Chelsea","Real Madrid"],"Bayer Leverkusen"],
+["LEGEND LEVEL","How many goals did Messi score in La Liga during the 2011–12 season?",null,"50"],
+["GOAT MODE","How many Ballon d'Or awards has Messi won?",null,"8"],
+["GOAT MODE","How many UEFA Champions League titles did Messi win with Barcelona?",["2","3","4","5"],"4"],
+["GOAT MODE","How many goals did Messi score in La Liga throughout his career?",null,"474"],
+["GOAT MODE","How many FIFA World Cup Golden Ball awards has Messi won?",["1","2","3","4"],"2"]
+];
+let current=0,stars=0,locked=false;
+const $=id=>document.getElementById(id);
+function show(id){["welcome","game","personal","final"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function startGame(){show("game");render()}
+function render(){
+ locked=false;const q=questions[current];
+ $("level").textContent=q[0];$("counter").textContent=String(current+1).padStart(2,"0")+" / 13";
+ $("progress").style.width=((current+1)/13*100)+"%";$("score").textContent="⭐ "+stars+" STARS";
+ $("question").textContent=q[1];$("feedback").textContent="";$("feedback").className="feedback";
+ $("options").innerHTML="";$("next").classList.add("hidden");$("typed").classList.add("hidden");$("submit").classList.add("hidden");$("typed").disabled=false;
+ if(q[2])q[2].forEach(answer=>{const b=document.createElement("button");b.className="option";b.textContent=answer;b.onclick=()=>check(answer);$("options").appendChild(b)});
+ else{$("typed").value="";$("typed").classList.remove("hidden");$("submit").classList.remove("hidden")}
+}
+function submitTyped(){const v=$("typed").value.trim();if(v)check(v)}
+function check(value){
+ if(locked)return;locked=true;const correct=value.trim().toLowerCase()===questions[current][3].toLowerCase();
+ if(correct){stars++;$("feedback").textContent="⭐ YES! YOU GOT IT!";$("feedback").classList.add("good");$("game").classList.add("pulse");setTimeout(()=>$("game").classList.remove("pulse"),650)}
+ else{stars=Math.max(0,stars-1);$("feedback").textContent="😡 NO! NOT QUITE!";$("feedback").classList.add("bad");$("game").classList.add("shake");setTimeout(()=>$("game").classList.remove("shake"),400)}
+ $("score").textContent="⭐ "+stars+" STARS";[...$("options").children].forEach(b=>b.disabled=true);$("typed").disabled=true;$("submit").classList.add("hidden");$("next").classList.remove("hidden");
+}
+function nextQuestion(){current++;if(current<questions.length)render();else show("personal")}
+function finishPersonal(){const answer=$("personalAnswer").value.trim();if(!answer){$("personalAnswer").focus();return}$("answerText").textContent=answer;const overlay=$("scoreboard");overlay.classList.remove("hidden");setTimeout(()=>{overlay.classList.add("hidden");show("final")},3200)}
+</script></body></html>
